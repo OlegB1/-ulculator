@@ -241,15 +241,15 @@
     }
 document.getElementsByClassName('btn equal-horizontal double-right')[0].addEventListener('mousedown',function (event) {
     document.getElementsByClassName('btn equal-vertical triple-right')[0].classList.toggle('equal-vertical-clicked');
-})
+});
 document.getElementsByClassName('btn equal-horizontal double-right')[0].addEventListener('mouseup',function (event) {
     document.getElementsByClassName('btn equal-vertical triple-right')[0].classList.toggle('equal-vertical-clicked');
 
-})
+});
 document.getElementsByClassName('btn equal-vertical triple-right')[0].addEventListener('mousedown',function (event) {
     document.getElementsByClassName('btn equal-horizontal double-right')[0].classList.toggle('equal-horizontal-clicked');
-})
+});
 document.getElementsByClassName('btn equal-vertical triple-right')[0].addEventListener('mouseup',function (event) {
     document.getElementsByClassName('btn equal-horizontal double-right')[0].classList.toggle('equal-horizontal-clicked');
-})
+});
 
