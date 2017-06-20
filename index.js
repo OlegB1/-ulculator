@@ -13,7 +13,7 @@
         exp = '';
         addItem('');
     }
-    
+
     function removeItem() {
         if (expForShowing[expForShowing.length-1] === 's'){
             expForShowing = expForShowing.substr(0, expForShowing.length-6);
@@ -22,61 +22,44 @@
         } else {
             expForShowing = expForShowing.substr(0, expForShowing.length-1);
         }
-        exp = exp.substr(0, exp.length-1)
+        exp = exp.substr(0, exp.length-1);
         document.getElementsByClassName('culc-result')[0].innerHTML = expForShowing;
     }
     var culc = function () {
         /testing for bracket/
-        testBracket ();
-
-        /do multiply and division/
-        doOperations('*');
+        isBracket ();
 
         /do division/
-        doOperations('/');
+        doOperations('/', exp);
+
+        /do multiply and division/
+        doOperations('*', exp);
 
         /do sum/
-        doOperations('+');
+        doOperations('+', exp);
 
         /do diff/
-        doOperations('-');
+        doOperations('-', exp);
 
-
-        if (parseInt(Number(exp)) % Number(exp)){
-            exp = Number(exp).toFixed(3)
-        }
         expForShowing = exp;
         document.getElementsByClassName('culc-result')[0].innerHTML = expForShowing;
 
 
-        function testBracket () {
+        function isBracket () {
             var bracketOpen = exp.indexOf('(');
             var bracketClose = exp.indexOf(')');
 
             if (bracketOpen != -1 || bracketClose != -1){
 
-                var bracket = exp.substr(bracketOpen, bracketClose - bracketOpen+1);
+                var bracket = '('+innerExp+')';
 
-                if (bracket.indexOf('*') != -1){
-                    var a = bracket.substr(1,bracket.indexOf('*') - 1);
-                    var b = bracket.substr(bracket.indexOf('*') + 1,bracket.length - bracket.indexOf('*') - 2);
-                    var result = mult(a,b)
-                } else
-                if (bracket.indexOf('/') != -1){
-                    var a = bracket.substr(1,bracket.indexOf('/') - 1);
-                    var b = bracket.substr(bracket.indexOf('/') + 1,bracket.length - bracket.indexOf('/') - 2);
-                    var result = division(a,b);
-                } else
-                if (bracket.indexOf('+') != -1){
-                    var a = bracket.substr(1,bracket.indexOf('+') - 1);
-                    var b = bracket.substr(bracket.indexOf('+') + 1,bracket.length - bracket.indexOf('+') - 2);
-                    var result = sum(a,b);
-                } else
-                if (bracket.indexOf('-') != -1){
-                    var a = bracket.substr(1,bracket.indexOf('-') - 1);
-                    var b = bracket.substr(bracket.indexOf('-') + 1,bracket.length - bracket.indexOf('-') - 2);
-                    var result = diff(a,b);
-                }
+                doOperations('*', bracket);
+
+                doOperations('/', bracket);
+
+                doOperations('+', bracket);
+
+                doOperations('-', bracket);
                 exp = exp.replace(bracket, result);
             }
         }
@@ -235,6 +218,10 @@
     }
 
     function division(a,b) {
+        if (Number(b) === 0){
+            return  document.getElementsByClassName('culc-result')[0].innerHTML =
+                'ERROR, division by 0';
+    }
         return Number(a)/Number(b)
     }
 
@@ -245,17 +232,19 @@
     function diff(a,b) {
         return Number(a)-Number(b)
     }
+
 document.getElementsByClassName('btn equal-horizontal double-right')[0].addEventListener('mousedown',function (event) {
     document.getElementsByClassName('btn equal-vertical triple-right')[0].classList.toggle('equal-vertical-clicked');
 });
+
 document.getElementsByClassName('btn equal-horizontal double-right')[0].addEventListener('mouseup',function (event) {
     document.getElementsByClassName('btn equal-vertical triple-right')[0].classList.toggle('equal-vertical-clicked');
-
 });
+
 document.getElementsByClassName('btn equal-vertical triple-right')[0].addEventListener('mousedown',function (event) {
     document.getElementsByClassName('btn equal-horizontal double-right')[0].classList.toggle('equal-horizontal-clicked');
 });
+
 document.getElementsByClassName('btn equal-vertical triple-right')[0].addEventListener('mouseup',function (event) {
     document.getElementsByClassName('btn equal-horizontal double-right')[0].classList.toggle('equal-horizontal-clicked');
 });
-
