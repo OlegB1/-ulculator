@@ -51,8 +51,6 @@
 
             if (bracketOpen != -1 || bracketClose != -1){
 
-                var bracket = '('+innerExp+')';
-
                 doOperations('*', bracket);
 
                 doOperations('/', bracket);
