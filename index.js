@@ -22,6 +22,7 @@
         } else {
             expForShowing = expForShowing.substr(0, expForShowing.length-1);
         }
+        exp = exp.substr(0, exp.length-1)
         document.getElementsByClassName('culc-result')[0].innerHTML = expForShowing;
     }
     var culc = function () {
