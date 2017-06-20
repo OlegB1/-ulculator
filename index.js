@@ -15,7 +15,13 @@
     }
     
     function removeItem() {
-        expForShowing = expForShowing.substr(0, expForShowing.length-1);
+        if (expForShowing[expForShowing.length-1] === 's'){
+            expForShowing = expForShowing.substr(0, expForShowing.length-6);
+        } else if (expForShowing[expForShowing.length-1] === 'e'){
+            expForShowing = expForShowing.substr(0, expForShowing.length-7);
+        } else {
+            expForShowing = expForShowing.substr(0, expForShowing.length-1);
+        }
         document.getElementsByClassName('culc-result')[0].innerHTML = expForShowing;
     }
     var culc = function () {
