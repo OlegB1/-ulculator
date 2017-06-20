@@ -94,3 +94,20 @@ padding-top: 25px;
     box-shadow: none;
     top: 312px;
 }
+.culc-row-6{
+    margin-top: 280px;
+}
+.culc-row-6 .double-btn:active{
+    box-shadow: none;
+    top: 364px;
+}
+.double-btn{
+    display: inline-block;
+    background-color: cadetblue;
+    color: white;
+    width: 204px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 3px 4px rgb(155, 158, 130);
+    position: absolute;
+}

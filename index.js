@@ -77,7 +77,6 @@
                     var result = diff(a,b);
                 }
                 exp = exp.replace(bracket, result);
-                console.log('without bracket',exp)
             }
         }
 
