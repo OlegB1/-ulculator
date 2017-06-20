@@ -44,20 +44,30 @@
         expForShowing = exp;
         document.getElementsByClassName('culc-result')[0].innerHTML = expForShowing;
 
-
         function isBracket () {
             var bracketOpen = exp.indexOf('(');
             var bracketClose = exp.indexOf(')');
-
             if (bracketOpen != -1 || bracketClose != -1){
-
-                doOperations('*', bracket);
-
-                doOperations('/', bracket);
-
-                doOperations('+', bracket);
-
-                doOperations('-', bracket);
+                var bracket = exp.substr(bracketOpen, bracketClose - bracketOpen+1);
+                if (bracket.indexOf('*') != -1){
+                    var a = bracket.substr(1,bracket.indexOf('*') - 1);
+                    var b = bracket.substr(bracket.indexOf('*') + 1, bracket.length - bracket.indexOf('*') - 2);
+                    var result = mult(a,b)
+                } else if (bracket.indexOf('/') != -1){
+                    var a = bracket.substr(1,bracket.indexOf('/') - 1);
+                    var b = bracket.substr(bracket.indexOf('/') + 1, bracket.length - bracket.indexOf('/') - 2);
+                    var result = division(a,b);
+                } else
+                if (bracket.indexOf('+') != -1){
+                    var a = bracket.substr(1,bracket.indexOf('+') - 1);
+                    var b = bracket.substr(bracket.indexOf('+') + 1, bracket.length - bracket.indexOf('+') - 2);
+                    var result = sum(a,b);
+                } else
+                if (bracket.indexOf('-') != -1){
+                    var a = bracket.substr(1,bracket.indexOf('-') - 1);
+                    var b = bracket.substr(bracket.indexOf('-') + 1, bracket.length - bracket.indexOf('-') - 2);
+                    var result = diff(a,b);
+                }
                 exp = exp.replace(bracket, result);
             }
         }
