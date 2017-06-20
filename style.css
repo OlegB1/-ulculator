@@ -1,0 +1,96 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(245, 245, 245);
+}
+.culc-content{
+    margin-top: 5%;
+    position: absolute;
+    margin-left: 35%;
+    width: 421px;
+    border: 2px solid firebrick;
+    border-radius: 18px;
+    padding: 14px;
+    padding-bottom: 58px
+}
+.culc-result{
+    position: relative;
+    font-size: 30px;
+    padding: 8px;
+    background-color: rgb(239, 233, 221);
+    border-radius: 10px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.culc-row{
+    margin-bottom: 72px;
+}
+.btn{
+    display: inline-block;
+    background-color: cadetblue;
+    color: white;
+    width: 96px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 3px 4px rgb(155, 158, 130);
+    position: absolute;
+}
+.right {
+    left: 110px;
+    margin-left: 12px;
+}
+.double-right {
+    left: 218px;
+    margin-left: 12px;
+}
+.triple-right {
+    left: 326px;
+    margin-left: 12px;
+}
+.culc-row .btn:active{
+box-shadow: none;
+top: 104px;
+}
+.culc-row-2 .btn:active{
+box-shadow: none;
+top: 156px;
+}
+.culc-row-3{
+margin-top: 124px;
+}
+.culc-row-3 .btn:active{
+    box-shadow: none;
+    top: 208px;
+}
+.culc-row-4{
+margin-top: 176px;
+margin-bottom: 72px;
+}
+.culc-row-4 .btn:active{
+    box-shadow: none;
+    top: 260px;
+}
+.culc-row-5{
+margin-top: 228px;
+}
+.culc-row-5 .btn:active{
+    box-shadow: none;
+    top: 312px;
+}
+.equal-vertical{
+padding-top: 25px;
+    font-size: 50px;
+}
+.equal-horizontal{
+    color: cadetblue;
+    width: 112px;
+    height: 41px;
+    box-shadow: 0px 4px rgb(155, 158, 130);
+}
+.equal-vertical-clicked{
+     box-shadow: none;
+     top: 260px
+}
+.equal-horizontal-clicked{
+    box-shadow: none;
+    top: 312px;
+}

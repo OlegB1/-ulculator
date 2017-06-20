@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Culc</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+    <div class="culc-content">
+        <div class="culc-result"> </div>
+        <div class="culc-row">
+            <div class = 'btn' onclick="clearAll()">С</div>
+            <div class = 'btn right' onclick="removeItem()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></div>
+            <div class = 'btn double-right' onclick="addItem('/')">&divide</div>
+            <div class = 'btn triple-right' onclick="addItem('*')">&times</div>
+        </div>
+        <div class="culc-row-2">
+            <div class = 'btn' onclick="addItem('7')">7</div>
+            <div class = 'btn right' onclick="addItem('8')">8</div>
+            <div class = 'btn double-right' onclick="addItem('9')">9</div>
+            <div class = 'btn triple-right' onclick="addItem('-')">–</div>
+        </div>
+        <div class="culc-row-3">
+            <div class = 'btn' onclick="addItem('4')">4</div>
+            <div class = 'btn right' onclick="addItem('5')">5</div>
+            <div class = 'btn double-right' onclick="addItem('6')">6</div>
+            <div class = 'btn triple-right' onclick="addItem('+')">+</div>
+        </div>
+        <div class="culc-row-4">
+            <div class = 'btn' onclick="addItem('1')">1</div>
+            <div class = 'btn right' onclick="addItem('2')">2</div>
+            <div class = 'btn double-right' onclick="addItem('3')">3</div>
+            <div class = 'btn equal-vertical triple-right' onclick="culc()">=</div>
+        </div>
+        <div class="culc-row-5">
+            <div class = 'btn' onclick="addItem('+')">0</div>
+            <div class = 'btn right' onclick="addItem('-')">.</div>
+            <div class = 'btn equal-horizontal double-right' onclick="addItem('*')">=</div>
+        </div>
+        <!--<div class="culc-row">-->
+            <!--<span class = 'btn' ng-click="addItem('+')">+</span>-->
+            <!--<span class = 'btn' ng-click="addItem('-')">-</span>-->
+            <!--<span class = 'btn' ng-click="addItem('/')">/</span>-->
+            <!--<span class = 'btn' ng-click="addItem('*')">*</span>-->
+        <!--</div>-->
+        <!--<div class="culc-row">-->
+            <!--<span class = 'btn' ng-click="addItem('7')">7</span>-->
+            <!--<span class = 'btn' ng-click="addItem('8')">8</span>-->
+            <!--<span class = 'btn' ng-click="addItem('9')">9</span>-->
+            <!--<span  class="btn" ng-click="addItem('')">-->
+                <!--<span class="arrow"></span>-->
+            <!--</span>-->
+        <!--</div>-->
+        <!--<div class="culc-row">-->
+            <!--<span class = 'btn' ng-click="addItem('4')">4</span>-->
+            <!--<span class = 'btn' ng-click="addItem('5')">5</span>-->
+            <!--<span class = 'btn' ng-click="addItem('6')">6</span>-->
+            <!--<span class = 'btn' ng-click="addItem('')">C</span>-->
+        <!--</div>-->
+        <!--<div class="culc-row">-->
+            <!--<span class = 'btn' ng-click="addItem('1')">1</span>-->
+            <!--<span class = 'btn' ng-click="addItem('2')">2</span>-->
+            <!--<span class = 'btn' ng-click="addItem('3')">3</span>-->
+            <!--<span class = 'btn' ng-click="culc()">=</span>-->
+        <!--</div>-->
+        <!--<div class="culc-row">-->
+            <!--<span class = 'btn' ng-click="addItem('(')">(</span>-->
+            <!--<span class = 'btn' ng-click="addItem(')')">)</span>-->
+            <!--<span class = 'btn' ng-click="addItem('.')">.</span>-->
+            <!--<span class = 'btn' ng-click="addItem('0')">0</span>-->
+        <!--</div>-->
+
+    </div>
+<script src="index.js" type="text/javascript"></script>
+</body>
+</html>
